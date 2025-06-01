@@ -1,4 +1,4 @@
-# Portfólio Pessoal Dinâmico - Diego Bernardes Silva
+# Portfólio Diego Bernardes Silva - Desenvolvedor Full Stack
 
 Este é o repositório do meu portfólio pessoal, uma aplicação web dinâmica desenvolvida para apresentar meus projetos, habilidades e informações de contato de uma forma moderna e interativa.
 

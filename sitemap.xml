@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.seusite.com/</loc> <!-- IMPORTANTE: Substitua pela URL do seu domínio quando fizer o deploy -->
+    <lastmod>YYYY-MM-DD</lastmod> <!-- IMPORTANTE: Substitua pela data da última modificação (ex: 2023-10-27) -->
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset> 

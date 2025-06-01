@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Diego Bernardes - Portfólio Desenvolvedor Full Stack
+{% endblock %}
+
+{% block header %}
+    {# A navbar agora é incluída pelo base.html #}
+{% endblock %}
+
+{% block content %}
+    {% include 'partials/_home.html' %}
+    {% include 'partials/_about.html' %}
+    {% include 'partials/_skills.html' %}
+    {% include 'partials/_projects.html' %}
+    {% include 'partials/_contact.html' %}
+
+    {# Outras seções do portfólio virão aqui, por exemplo:
+    {% include 'partials/_contact.html' %}
+    #}
+{% endblock %} 

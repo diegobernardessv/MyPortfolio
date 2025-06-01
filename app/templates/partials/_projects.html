@@ -1,0 +1,58 @@
+<section id="projects" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Meus Projetos</h2>
+            <hr class="w-25 mx-auto">
+            <p class="lead text-muted">Uma seleção dos meus trabalhos mais recentes e relevantes.</p>
+        </div>
+
+        <div class="row gy-4 justify-content-center">
+            {% if projects %}
+                {% for project in projects %}
+                <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
+                    <div class="card project-card h-100 shadow-sm">
+                        <img src="{{ url_for('static', filename=project.image) if project.image else url_for('static', filename='img/placeholder_project.png') }}" 
+                             class="card-img-top" alt="{{ project.title }}">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">{{ project.title }}</h5>
+                            <p class="card-text small text-muted flex-grow-1">{{ project.description }}</p>
+                            <div>
+                                <h6 class="small fw-bold mb-1">Tecnologias:</h6>
+                                <div class="mb-3">
+                                    {% for tech in project.technologies %}
+                                        <span class="badge bg-secondary me-1 mb-1">{{ tech }}</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="mt-auto pt-2 border-top">
+                                {% if project.repo_link and project.repo_link != '#' %}
+                                    {% if project.repo_link.startswith('http') or project.repo_link.startswith('//') %}
+                                        {# Link externo para GitHub, GitLab, etc. #}
+                                        <a href="{{ project.repo_link }}" class="btn btn-outline-primary btn-sm me-2" target="_blank" rel="noopener noreferrer">
+                                            <i class="bi bi-code-slash"></i> Código
+                                        </a>
+                                    {% else %}
+                                        {# Link interno para um arquivo estático (ex: README.pdf) #}
+                                        <a href="{{ url_for('static', filename=project.repo_link) }}" class="btn btn-outline-info btn-sm me-2" target="_blank" rel="noopener noreferrer">
+                                            <i class="bi bi-file-earmark-text-fill"></i> Detalhes
+                                        </a>
+                                    {% endif %}
+                                {% endif %}
+                                {% if project.live_link and project.live_link != '#' %}
+                                    <a href="{{ project.live_link }}" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">
+                                        <i class="bi bi-eye-fill"></i> Demo Ao Vivo
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="col-12">
+                    <p class="text-center">Nenhum projeto para exibir no momento. Volte em breve!</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section> 

@@ -473,4 +473,43 @@ body.has-fixed-navbar {
     margin-bottom: 0; /* Remove margem inferior se o container já dá espaçamento */
     border-radius: 0; /* Opcional: remove o border-radius se o alerta ocupa toda a largura */
     /* Considerar adicionar um max-width e margin: auto para o .container dentro dele se quiser que o alerta não seja full-width */
+}
+
+/* Estilos para o botão Entre em Contato na Seção Home no Tema Claro */
+.light-theme #home .btn-home-contact {
+    color: #000000; /* Cor do texto preta */
+    border-color: #000000; /* Cor da borda preta */
+    background-color: transparent;
+}
+
+.light-theme #home .btn-home-contact:hover,
+.light-theme #home .btn-home-contact:focus {
+    color: #ffffff; /* Cor do texto branca ao passar o mouse/focar */
+    background-color: #000000; /* Cor de fundo preta ao passar o mouse/focar */
+    border-color: #000000; /* Cor da borda preta ao passar o mouse/focar */
+}
+
+/* Estilos para o botão de tema na Seção Home */
+#home .theme-toggle-home {
+    position: absolute;
+    top: 20px; /* Ajuste conforme necessário */
+    right: 20px; /* Ajuste conforme necessário */
+    z-index: 10; /* Para garantir que fique sobre outros elementos da home, se houver */
+}
+
+#home .theme-toggle-home i {
+    font-size: 1.5rem; /* Tamanho maior para o ícone na home */
+    color: var(--theme-text-light); /* Cor clara para o tema escuro da home */
+}
+
+/* Ajuste do ícone do botão de tema na Home para o tema claro */
+.light-theme #home .theme-toggle-home i {
+    color: var(--theme-text-light); /* Cor escura para o tema claro da home */
+}
+
+.light-theme #home .btn-home-contact:focus,
+.light-theme #home .btn-home-contact:hover {
+    color: #ffffff; /* Cor do texto branca ao passar o mouse/focar */
+    background-color: #000000; /* Cor de fundo preta ao passar o mouse/focar */
+    border-color: #000000; /* Cor da borda preta ao passar o mouse/focar */
 } 

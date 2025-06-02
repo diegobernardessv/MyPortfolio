@@ -12,7 +12,7 @@
 
 /* Estilos globais podem vir aqui */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
     background-color: var(--theme-bg-dark);
     color: var(--theme-text-light);
 }
@@ -99,14 +99,29 @@ footer .bi {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://via.placeholder.com/1920x1080.png?text=Sua+Imagem+Aqui') no-repeat center center;
     background-size: cover;
     color: var(--theme-text-light); /* Garante que o texto na home seja claro */
+    padding-top: 80px; 
+    padding-bottom: 80px;
+    text-align: center; 
 }
 
 #home .lead {
     color: var(--theme-text-light) !important; /* Descrição na home */
+    font-size: 1rem; 
 }
 
 #home h1 {
     color: var(--theme-text-light) !important; /* Título na home */
+    font-size: 2.5rem; 
+}
+
+/* Botões na Home */
+#home .btn {
+    margin-bottom: 0.5rem; 
+}
+
+/* Botão Download CV na Home - Modo Escuro */
+#home .btn.btn-danger {
+    color: #212529 !important; /* Cor de texto escura */
 }
 
 /* Estilos para os ícones sociais, se precisarmos de customização além do Bootstrap */
@@ -125,11 +140,94 @@ footer .bi {
 }
 
 #about .img-fluid {
-    border: 5px solid var(--theme-primary-accent); /* Borda com cor de destaque */
+    border: 5px solid whitesmoke; /* Borda com cor de destaque */
+    /* A borda de 5px pode ser um pouco grossa em telas menores */
+}
+
+#about h3 { /* "Olá! Eu sou Diego Bernardes Silva." */
+    font-size: 1.75rem; /* Tamanho base */
+}
+
+#about p { /* Parágrafos descritivos */
+    font-size: 0.95rem; /* Tamanho base para os parágrafos normais */
+    line-height: 1.6;
+}
+
+#about .lead { /* Parágrafo de introdução "apaixonado por..." */
+    font-size: 1.1rem; /* Um pouco maior que o texto normal */
+    margin-bottom: 1rem; /* Espaçamento após o lead */
 }
 
 #about .display-6 { /* Subtítulos em "Destaques" */
     color: var(--theme-primary-accent);
+}
+
+/* Destaques na seção Sobre */
+#about .row.mt-5 h4 { /* Títulos dos destaques (4 Anos, 10+ Tecnologias, etc.) */
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+#about .row.mt-5 h4 i { /* Ícones nos destaques */
+    font-size: 1.1rem; /* Ajustar o tamanho do ícone se necessário */
+    margin-right: 0.3rem;
+}
+
+#about .row.mt-5 p.text-muted { /* Texto abaixo dos títulos dos destaques */
+    font-size: 0.85rem;
+}
+
+/* Media queries para #about */
+@media (max-width: 768px) { /* Breakpoint md, onde as colunas empilham */
+    #about .img-fluid {
+        max-width: 200px !important; /* Reduzir o tamanho máximo da imagem um pouco mais */
+        border-width: 3px; /* Reduzir a espessura da borda */
+        margin-bottom: 1.5rem; /* Adicionar mais espaço abaixo da imagem quando empilhada */
+    }
+    #about .col-md-8 { /* Coluna de texto quando empilhada */
+        text-align: center; /* Centralizar texto quando a imagem está acima */
+    }
+    #about h3 {
+        font-size: 1.5rem;
+    }
+    #about .lead {
+        font-size: 1rem;
+    }
+    #about p {
+        font-size: 0.9rem;
+    }
+
+    /* Ajustes nos destaques quando empilhados */
+    #about .row.mt-5 > div[class*="col-"] { /* Selecionar as colunas dos destaques */
+        margin-bottom: 1.5rem; /* Adicionar espaço entre os destaques empilhados */
+    }
+    #about .row.mt-5 > div[class*="col-"]:last-child {
+        margin-bottom: 0; /* Remover margem do último item */
+    }
+    #about .row.mt-5 h4 {
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 576px) { /* Breakpoint sm */
+    #about .img-fluid {
+        max-width: 180px !important;
+    }
+    #about h3 {
+        font-size: 1.4rem;
+    }
+    #about .lead {
+        font-size: 0.95rem;
+    }
+    #about p {
+        font-size: 0.875rem;
+    }
+    #about .row.mt-5 h4 {
+        font-size: 1.1rem;
+    }
+    #about .row.mt-5 p.text-muted {
+        font-size: 0.8rem;
+    }
 }
 
 /* Estilos da Seção Habilidades */
@@ -142,6 +240,7 @@ footer .bi {
     background-color: var(--theme-surface-dark);
     border: 1px solid var(--theme-border-dark);
     border-radius: 0.5rem; /* Arredondamento sutil para os cards de habilidade */
+    padding: 1rem; /* Adicionar um pouco de padding interno ao card */
 }
 
 #skills .card:hover {
@@ -151,15 +250,50 @@ footer .bi {
 
 #skills .card .card-title {
     color: var(--theme-primary-accent);
+    font-size: 1.2rem; /* Tamanho base */
+    margin-bottom: 0.75rem; /* Espaço abaixo do título */
 }
 
 #skills .card .list-unstyled li {
-    padding: 0.25rem 0;
+    padding: 0.15rem 0; /* Reduzir um pouco o padding vertical */
     color: var(--theme-text-light);
+    font-size: 0.9rem; /* Tamanho base para os itens da lista */
 }
 
-#skills .card i { /* Ícones dentro dos cards de skills */
+#skills .card i.bi { /* Ícones grandes no topo do card */
     color: var(--theme-primary-accent);
+    font-size: 2.5rem !important; /* Reduzir um pouco o fs-1 do Bootstrap */
+}
+
+/* Media Queries para #skills */
+@media (max-width: 768px) { /* Telas médias e pequenas */
+    #skills .card .card-title {
+        font-size: 1.15rem;
+    }
+    #skills .card .list-unstyled li {
+        font-size: 0.875rem;
+    }
+    #skills .card i.bi {
+        font-size: 2.25rem !important;
+    }
+}
+
+@media (max-width: 576px) { /* Telas pequenas */
+    #skills .lead { /* Parágrafo "Tecnologias e ferramentas..." */
+        font-size: 0.9rem; /* Reduzir o lead da seção também */
+    }
+    #skills .card {
+        padding: 0.75rem;
+    }
+    #skills .card .card-title {
+        font-size: 1.1rem;
+    }
+    #skills .card .list-unstyled li {
+        font-size: 0.85rem;
+    }
+    #skills .card i.bi {
+        font-size: 2rem !important;
+    }
 }
 
 
@@ -225,6 +359,12 @@ footer .bi {
 
 .btn-outline-info { /* Botão 'Detalhes' */
     color: var(--theme-link-hover);
+    border-color: var(--theme-link-hover);
+}
+
+.btn-outline-info:hover {
+    color: var(--theme-bg-dark);
+    background-color: var(--theme-link-hover);
     border-color: var(--theme-link-hover);
 }
 
@@ -434,7 +574,7 @@ footer .bi {
 body {
     /* O padding-top do body geralmente já deve existir para compensar a navbar fixed-top */
     /* Não adicionaremos padding extra aqui para o flash, pois ele ficará abaixo da navbar */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
     background-color: var(--theme-bg-dark);
     color: var(--theme-text-light);
 }
@@ -458,7 +598,7 @@ body.has-fixed-navbar {
     /* Vamos assumir que a navbar tem cerca de 56px-72px + alerta uns 50-70px */
     /* Este valor é um palpite e pode precisar de ajuste. */
     /* padding-top: 140px; */ /* Comentado por enquanto, pois pode ser demais se a navbar não for fixed-top sempre visível */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
     background-color: var(--theme-bg-dark);
     color: var(--theme-text-light);
 }
@@ -492,19 +632,56 @@ body.has-fixed-navbar {
 /* Estilos para o botão de tema na Seção Home */
 #home .theme-toggle-home {
     position: absolute;
-    top: 20px; /* Ajuste conforme necessário */
-    right: 20px; /* Ajuste conforme necessário */
-    z-index: 10; /* Para garantir que fique sobre outros elementos da home, se houver */
+    top: 15px; 
+    right: 15px; 
+    z-index: 10;
 }
 
 #home .theme-toggle-home i {
-    font-size: 1.5rem; /* Tamanho maior para o ícone na home */
-    color: var(--theme-text-light); /* Cor clara para o tema escuro da home */
+    font-size: 1.3rem; 
+    color: var(--theme-text-light);
 }
 
-/* Ajuste do ícone do botão de tema na Home para o tema claro */
-.light-theme #home .theme-toggle-home i {
-    color: var(--theme-text-light); /* Cor escura para o tema claro da home */
+/* Media Query para telas menores - ajustes específicos para Home */
+@media (max-width: 768px) {
+    #home {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    #home h1 {
+        font-size: 2rem; 
+    }
+    #home .lead {
+        font-size: 0.9rem; 
+    }
+    #home .btn {
+        width: 75%; 
+        margin-left: auto;
+        margin-right: auto;
+        display: block; 
+    }
+    .social-icons a i { /* Target o ícone dentro do link */
+        font-size: 1.5rem; 
+    }
+}
+
+@media (max-width: 576px) {
+    #home h1 {
+        font-size: 1.8rem; 
+    }
+     #home .btn {
+        width: 90%; 
+    }
+    .social-icons a i { /* Target o ícone dentro do link */
+        font-size: 1.4rem; 
+    }
+}
+
+/* Estilo para modal de galeria extra grande customizado */
+@media (min-width: 1200px) { /* Aplicar apenas em telas grandes, Bootstrap usa este breakpoint para xl */
+    .modal-dialog.gallery-modal-xl-custom {
+        max-width: 90vw;
+    }
 }
 
 .light-theme #home .btn-home-contact:focus,
@@ -512,4 +689,9 @@ body.has-fixed-navbar {
     color: #ffffff; /* Cor do texto branca ao passar o mouse/focar */
     background-color: #000000; /* Cor de fundo preta ao passar o mouse/focar */
     border-color: #000000; /* Cor da borda preta ao passar o mouse/focar */
+}
+
+/* Botão Download CV na Home - Modo Claro */
+.light-theme #home .btn.btn-danger {
+    color: #ffffff !important; /* Forçar texto branco no modo claro */
 } 

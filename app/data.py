@@ -16,6 +16,21 @@ PROJECTS = [
         'technologies': ['Python', 'Flask', 'HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PostgreSQL' , 'Docker', 'Kubernetes', 'GitLab CI/CD'],
         'repo_link': 'projects/Romaneiosapp/README.pdf', # Substitua pelo link do seu repositório
         'live_link': 'https://romaneiosapp.gbtech.cloud/login',    # Substitua pelo link da demo se houver, ou deixe None
+        'gallery_images': [
+            'projects/Romaneiosapp/pictures/1.Login.PNG',
+            'projects/Romaneiosapp/pictures/2.Home.PNG',
+            'projects/Romaneiosapp/pictures/3.Criar_romaneio.PNG',
+            'projects/Romaneiosapp/pictures/4.Gestão de caixas.PNG',
+            'projects/Romaneiosapp/pictures/5.Visao_caixas.PNG',
+            'projects/Romaneiosapp/pictures/6.Relatorio.PNG',
+            'projects/Romaneiosapp/pictures/7.Cadastro_usuarios.PNG',
+            'projects/Romaneiosapp/pictures/8.Delegar_assinatura.PNG',
+            'projects/Romaneiosapp/pictures/9.Navbar.PNG',
+            'projects/Romaneiosapp/pictures/10.Assinar_romaneio.PNG',
+            'projects/Romaneiosapp/pictures/11.Romaneio_assinado.PNG',
+            'projects/Romaneiosapp/pictures/Funcionalidades.PNG',
+            'projects/Romaneiosapp/pictures/Tecnologias e Arquitetura do Sistema.PNG'
+        ]
     },
     {
         'id': 'nonconformity', # um identificador único para o projeto

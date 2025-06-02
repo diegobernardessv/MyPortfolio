@@ -12,7 +12,7 @@
                 <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
                     <div class="card project-card h-100 shadow-sm">
                         <img src="{{ url_for('static', filename=project.image) if project.image else url_for('static', filename='img/placeholder_project.png') }}" 
-                             class="card-img-top" alt="{{ project.title }}">
+                             class="card-img-top" alt="{{ project.title }}" loading="lazy">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold">{{ project.title }}</h5>
                             <p class="card-text small text-muted flex-grow-1">{{ project.description }}</p>
@@ -24,16 +24,16 @@
                                     {% endfor %}
                                 </div>
                             </div>
-                            <div class="mt-auto pt-2 border-top">
+                            <div class="mt-auto pt-2 border-top d-flex flex-wrap justify-content-start align-items-center gap-2">
                                 {% if project.repo_link and project.repo_link != '#' %}
                                     {% if project.repo_link.startswith('http') or project.repo_link.startswith('//') %}
                                         {# Link externo para GitHub, GitLab, etc. #}
-                                        <a href="{{ project.repo_link }}" class="btn btn-outline-primary btn-sm me-2" target="_blank" rel="noopener noreferrer">
+                                        <a href="{{ project.repo_link }}" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">
                                             <i class="bi bi-code-slash"></i> Código
                                         </a>
                                     {% else %}
                                         {# Link interno para um arquivo estático (ex: README.pdf) #}
-                                        <a href="{{ url_for('static', filename=project.repo_link) }}" class="btn btn-outline-info btn-sm me-2" target="_blank" rel="noopener noreferrer">
+                                        <a href="{{ url_for('static', filename=project.repo_link) }}" class="btn btn-outline-info btn-sm" target="_blank" rel="noopener noreferrer">
                                             <i class="bi bi-file-earmark-text-fill"></i> Detalhes
                                         </a>
                                     {% endif %}
@@ -43,10 +43,52 @@
                                         <i class="bi bi-eye-fill"></i> Demo Ao Vivo
                                     </a>
                                 {% endif %}
+                                {% if project.gallery_images %}
+                                    <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#galleryModal-{{ project.id }}">
+                                        <i class="bi bi-images"></i> Ver Galeria
+                                    </button>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
                 </div>
+
+                {% if project.gallery_images %}
+                <div class="modal fade" id="galleryModal-{{ project.id }}" tabindex="-1" aria-labelledby="galleryModalLabel-{{ project.id }}" aria-hidden="true">
+                    <div class="modal-dialog modal-xl gallery-modal-xl-custom modal-dialog-centered">
+                        <div class="modal-content bg-dark text-light">
+                            <div class="modal-header border-secondary">
+                                <h5 class="modal-title" id="galleryModalLabel-{{ project.id }}">{{ project.title }} - Galeria</h5>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="carousel-{{ project.id }}" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-indicators">
+                                        {% for image_path in project.gallery_images %}
+                                        <button type="button" data-bs-target="#carousel-{{ project.id }}" data-bs-slide-to="{{ loop.index0 }}" class="{{ 'active' if loop.first else '' }}" aria-current="{{ 'true' if loop.first else 'false' }}" aria-label="Slide {{ loop.index }}"></button>
+                                        {% endfor %}
+                                    </div>
+                                    <div class="carousel-inner rounded">
+                                        {% for image_path in project.gallery_images %}
+                                        <div class="carousel-item {{ 'active' if loop.first else '' }}">
+                                            <img src="{{ url_for('static', filename=image_path) }}" class="d-block w-100" alt="Imagem {{ loop.index }} da galeria de {{ project.title }}" loading="lazy" style="max-height: 70vh; object-fit: contain; border-radius: 0.5rem;">
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{ project.id }}" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Anterior</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carousel-{{ project.id }}" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Próximo</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
                 {% endfor %}
             {% else %}
                 <div class="col-12">

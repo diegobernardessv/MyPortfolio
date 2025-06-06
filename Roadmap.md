@@ -1,64 +1,64 @@
 # Roadmap do Projeto: Portfólio Pessoal Dinâmico
 
 ## Visão Geral
-Desenvolver um portfólio pessoal interativo e moderno, inspirado no design e funcionalidades de `https://ankitpakhale.netlify.app/portfolio`. O projeto será construído com Python (Flask), HTML, CSS (Bootstrap 5) e JavaScript (ES6+), com foco em componentes reutilizáveis, animações e facilidade de atualização das informações.
+Desenvolver um portfólio pessoal interativo e moderno, para apresentação de projetos. O portfólio será construído com Python (Flask), HTML, CSS (Bootstrap 5) e JavaScript (ES6+), com foco em componentes reutilizáveis, animações e facilidade de atualização das informações.
 
 ## Stack Tecnológico
 - **Backend**: Python (Flask)
 - **Frontend**: HTML5, CSS3, Bootstrap 5, JavaScript (ES6+)
-- **Banco de Dados**: Inicialmente dados estáticos (JSON ou Python dicts). PostgreSQL pode ser considerado para futuras expansões ou gerenciamento de conteúdo mais complexo.
-- **Hospedagem**: A definir (ex: PythonAnywhere, Heroku, Vercel para backend Flask, ou Netlify/GitHub Pages se optarmos por uma versão estática gerada).
+- **Banco de Dados**: PostgreSQL
+- **Hospedagem**: Docker + Kubernetes
 - **Versionamento**: Git
 
 ## Fases do Projeto
 
 ### Fase 1: Estrutura Base, Design Inicial e Seções Essenciais (MVP)
 1.  **Configuração do Ambiente de Desenvolvimento:**
-    *   [ ] Criar estrutura de pastas do projeto Flask (`app`, `static`, `templates`, `instance` para configurações).
-    *   [ ] Configuração inicial do Flask (`__init__.py` com app factory, `config.py`).
-    *   [ ] Criação de Blueprints básicos (ex: `main` para rotas do portfólio).
-    *   [ ] Inclusão do Bootstrap 5 e um arquivo CSS customizado (`static/css/style.css`).
-    *   [ ] Criação do `requirements.txt` (Flask, etc.).
+    *   [X] Criar estrutura de pastas do projeto Flask (`app`, `static`, `templates`, `instance` para configurações).
+    *   [X] Configuração inicial do Flask (`__init__.py` com app factory, `config.py`).
+    *   [X] Criação de Blueprints básicos (ex: `main` para rotas do portfólio).
+    *   [X] Inclusão do Bootstrap 5 e um arquivo CSS customizado (`static/css/style.css`).
+    *   [X] Criação do `requirements.txt` (Flask, etc.).
     *   [ ] Configuração do `Dockerfile` e `docker-compose.yml` (recomendado para consistência).
 2.  **Criação e Refinamento do `Roadmap.md` (este documento).**
     *   [X] Versão inicial criada.
     *   [X] Revisar e detalhar com base no feedback do usuário.
 3.  **Layout Principal e Navegação:**
-    *   [ ] Criar template base (`templates/base.html`) com Jinja2 (estrutura HTML, inclusão de CSS/JS, blocos para header, content, footer).
-    *   [ ] Implementar a barra de navegação fixa no topo (`templates/partials/_navbar.html`), inspirada na referência, com links para as futuras seções.
-    *   [ ] Estilização inicial global e da navegação.
+    *   [X] Criar template base (`templates/base.html`) com Jinja2 (estrutura HTML, inclusão de CSS/JS, blocos para header, content, footer).
+    *   [X] Implementar a barra de navegação fixa no topo (`templates/partials/_navbar.html`), inspirada na referência, com links para as futuras seções.
+    *   [X] Estilização inicial global e da navegação.
 4.  **Seção Home/Hero:**
-    *   [ ] Estrutura HTML (`templates/partials/_home.html`).
-    *   [ ] Conteúdo: Nome, título/profissão.
+    *   [X] Estrutura HTML (`templates/partials/_home.html`).
+    *   [X] Conteúdo: Nome, título/profissão.
     *   [ ] Implementar efeito de digitação em JavaScript para o título/subtítulo.
-    *   [ ] Botões de CTA (ex: "Meus Projetos", "Contato").
-    *   [ ] Links para redes sociais (ícones).
+    *   [X] Botões de CTA (ex: "Meus Projetos", "Contato").
+    *   [X] Links para redes sociais (ícones).
 5.  **Seção Sobre Mim (About):**
-    *   [ ] Estrutura HTML (`templates/partials/_about.html`).
-    *   [ ] Layout para foto e texto descritivo.
-    *   [ ] Campos para informações chave.
+    *   [X] Estrutura HTML (`templates/partials/_about.html`).
+    *   [X] Layout para foto e texto descritivo.
+    *   [X] Campos para informações chave.
 6.  **Seção Habilidades (Skills):**
-    *   [ ] Estrutura HTML (`templates/partials/_skills.html`).
-    *   [ ] Exibição de habilidades (ex: ícones + texto, agrupados por categoria).
+    *   [X] Estrutura HTML (`templates/partials/_skills.html`).
+    *   [X] Exibição de habilidades (ex: ícones + texto, agrupados por categoria).
     *   [ ] Considerar interatividade com JS (ex: animação ao rolar para a seção).
 7.  **Rodapé (Footer):**
-    *   [ ] Estrutura HTML (`templates/partials/_footer.html`).
-    *   [ ] Links para redes sociais, copyright.
+    *   [X] Estrutura HTML (`templates/partials/_footer.html`).
+    *   [X] Links para redes sociais, copyright.
 8.  **Dados Iniciais:**
-    *   [ ] Criar um arquivo (ex: `data.py` ou `data.json`) para armazenar os textos, links, listas de habilidades e informações dos projetos, facilitando a alteração.
+    *   [X] Criar um arquivo (ex: `data.py` ou `data.json`) para armazenar os textos, links, listas de habilidades e informações dos projetos, facilitando a alteração.
 
 ### Fase 2: Conteúdo Interativo e Seções Adicionais
 1.  **Seção Projetos (Portfolio/Work):**
-    *   [ ] Estrutura HTML (`templates/partials/_projects.html`).
-    *   [ ] Design de cards para projetos (imagem, título, descrição, tecnologias, links GitHub/Live).
-    *   [ ] Carregar dados dos projetos do arquivo `data.py/json`.
+    *   [X] Estrutura HTML (`templates/partials/_projects.html`).
+    *   [X] Design de cards para projetos (imagem, título, descrição, tecnologias, links GitHub/Live).
+    *   [X] Carregar dados dos projetos do arquivo `data.py/json`.
     *   [ ] Efeitos de hover/animações com JavaScript nos cards.
-    *   [ ] (Opcional) Modal para detalhes do projeto.
+    *   [X] (Opcional) Modal para detalhes do projeto.
     *   [ ] (Opcional) Filtros para projetos (por tecnologia, tipo).
 2.  **Seção Contato (Contact):**
-    *   [ ] Estrutura HTML (`templates/partials/_contact.html`).
-    *   [ ] Formulário de contato (HTML inicial, backend do formulário será Fase 3).
-    *   [ ] Exibir informações de contato (email, LinkedIn, etc.).
+    *   [X] Estrutura HTML (`templates/partials/_contact.html`).
+    *   [X] Formulário de contato (HTML inicial, backend do formulário será Fase 3).
+    *   [X] Exibir informações de contato (email, LinkedIn, etc.).
 3.  **JavaScript Geral e Interatividade:**
     *   [ ] Scroll Suave para links internos da navegação.
     *   [ ] "Scroll Spy" para destacar a seção ativa na navegação.
@@ -67,9 +67,9 @@ Desenvolver um portfólio pessoal interativo e moderno, inspirado no design e fu
 
 ### Fase 3: Funcionalidades Avançadas, Backend e Polimento
 1.  **Backend do Formulário de Contato:**
-    *   [ ] Rota Flask para receber os dados do formulário.
-    *   [ ] Validação dos dados.
-    *   [ ] Envio de email (ex: usando Flask-Mail) ou armazenamento da mensagem.
+    *   [X] Rota Flask para receber os dados do formulário.
+    *   [X] Validação dos dados.
+    *   [X] Envio de email (ex: usando Flask-Mail) ou armazenamento da mensagem.
 2.  **Tema Claro/Escuro (Dark Mode):**
     *   [ ] Implementar a lógica de alternância de tema com JavaScript.
     *   [ ] Definir paletas de cores para ambos os temas.
@@ -82,9 +82,9 @@ Desenvolver um portfólio pessoal interativo e moderno, inspirado no design e fu
     *   [ ] Revisar o site para garantir boas práticas de acessibilidade (contraste, navegação por teclado, ARIA labels onde necessário).
 5.  **SEO Básico:**
     *   [ ] Meta tags (título, descrição, keywords) para cada página/seção principal.
-    *   [ ] `robots.txt` e `sitemap.xml` (pode ser gerado dinamicamente ou estático).
+    *   [X] `robots.txt` e `sitemap.xml` (pode ser gerado dinamicamente ou estático).
 6.  **"Download CV":**
-    *   [ ] Adicionar botão e funcionalidade para download do CV (arquivo PDF na pasta `static`).
+    *   [X] Adicionar botão e funcionalidade para download do CV (arquivo PDF na pasta `static`).
 
 ### Fase 4: Testes e Deploy
 1.  **Testes Finais:**
@@ -103,7 +103,7 @@ Desenvolver um portfólio pessoal interativo e moderno, inspirado no design e fu
 
 ## Próximos Passos (Imediatos)
 -   [X] Discutir e validar esta versão do Roadmap com o usuário.
--   [ ] Iniciar a Fase 1, começando pela configuração do ambiente de desenvolvimento e estrutura básica do Flask.
+-   [X] Iniciar a Fase 1, começando pela configuração do ambiente de desenvolvimento e estrutura básica do Flask.
 
 ---
 

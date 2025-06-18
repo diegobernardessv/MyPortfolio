@@ -12,7 +12,7 @@
 
 /* Estilos globais podem vir aqui */
 body {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: var(--theme-bg-dark);
     color: var(--theme-text-light);
 }
@@ -574,7 +574,7 @@ footer .bi {
 body {
     /* O padding-top do body geralmente já deve existir para compensar a navbar fixed-top */
     /* Não adicionaremos padding extra aqui para o flash, pois ele ficará abaixo da navbar */
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: var(--theme-bg-dark);
     color: var(--theme-text-light);
 }
@@ -598,7 +598,7 @@ body.has-fixed-navbar {
     /* Vamos assumir que a navbar tem cerca de 56px-72px + alerta uns 50-70px */
     /* Este valor é um palpite e pode precisar de ajuste. */
     /* padding-top: 140px; */ /* Comentado por enquanto, pois pode ser demais se a navbar não for fixed-top sempre visível */
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: var(--theme-bg-dark);
     color: var(--theme-text-light);
 }

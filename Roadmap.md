@@ -30,7 +30,7 @@ Desenvolver um portfólio pessoal interativo e moderno, para apresentação de p
 4.  **Seção Home/Hero:**
     *   [X] Estrutura HTML (`templates/partials/_home.html`).
     *   [X] Conteúdo: Nome, título/profissão.
-    *   [ ] Implementar efeito de digitação em JavaScript para o título/subtítulo.
+    *   [X] Implementar efeito de digitação em JavaScript para o título/subtítulo.
     *   [X] Botões de CTA (ex: "Meus Projetos", "Contato").
     *   [X] Links para redes sociais (ícones).
 5.  **Seção Sobre Mim (About):**
@@ -52,18 +52,18 @@ Desenvolver um portfólio pessoal interativo e moderno, para apresentação de p
     *   [X] Estrutura HTML (`templates/partials/_projects.html`).
     *   [X] Design de cards para projetos (imagem, título, descrição, tecnologias, links GitHub/Live).
     *   [X] Carregar dados dos projetos do arquivo `data.py/json`.
-    *   [ ] Efeitos de hover/animações com JavaScript nos cards.
+    *   [X] Efeitos de hover/animações com JavaScript nos cards.
     *   [X] (Opcional) Modal para detalhes do projeto.
-    *   [ ] (Opcional) Filtros para projetos (por tecnologia, tipo).
+    *   [X] (Opcional) Filtros para projetos (por tecnologia, tipo).
 2.  **Seção Contato (Contact):**
     *   [X] Estrutura HTML (`templates/partials/_contact.html`).
     *   [X] Formulário de contato (HTML inicial, backend do formulário será Fase 3).
     *   [X] Exibir informações de contato (email, LinkedIn, etc.).
 3.  **JavaScript Geral e Interatividade:**
-    *   [ ] Scroll Suave para links internos da navegação.
-    *   [ ] "Scroll Spy" para destacar a seção ativa na navegação.
-    *   [ ] Animações sutis em elementos ao rolar a página (efeito "reveal").
-    *   [ ] Garantir responsividade completa com Bootstrap e ajustes customizados.
+    *   [X] Scroll Suave para links internos da navegação.
+    *   [X] "Scroll Spy" para destacar a seção ativa na navegação.
+    *   [X] Animações sutis em elementos ao rolar a página (efeito "reveal").
+    *   [X] Garantir responsividade completa com Bootstrap e ajustes customizados.
 
 ### Fase 3: Funcionalidades Avançadas, Backend e Polimento
 1.  **Backend do Formulário de Contato:**
@@ -71,9 +71,9 @@ Desenvolver um portfólio pessoal interativo e moderno, para apresentação de p
     *   [X] Validação dos dados.
     *   [X] Envio de email (ex: usando Flask-Mail) ou armazenamento da mensagem.
 2.  **Tema Claro/Escuro (Dark Mode):**
-    *   [ ] Implementar a lógica de alternância de tema com JavaScript.
-    *   [ ] Definir paletas de cores para ambos os temas.
-    *   [ ] Salvar a preferência do usuário (localStorage).
+    *   [X] Implementar a lógica de alternância de tema com JavaScript.
+    *   [X] Definir paletas de cores para ambos os temas.
+    *   [X] Salvar a preferência do usuário (localStorage).
 3.  **Otimizações:**
     *   [ ] Otimização de imagens.
     *   [ ] Minificação de CSS/JS para produção.

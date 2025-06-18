@@ -3,6 +3,13 @@
 console.log("main.js carregado!");
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Inicializa a biblioteca Animate On Scroll (AOS)
+    AOS.init({
+        duration: 800, // Duração da animação em ms
+        once: true, // Se a animação deve acontecer apenas uma vez
+        offset: 50, // "Gatilho" da animação um pouco antes do elemento aparecer
+    });
+
     // Efeito de Digitação com Typed.js
     const typedTextElement = document.getElementById('typed-text');
     
@@ -63,6 +70,22 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Smooth Scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 
     // Outras interações JavaScript do portfólio podem vir aqui
     // Ex: Scroll suave, animações ao rolar, etc.

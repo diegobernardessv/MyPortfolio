@@ -44,7 +44,7 @@
                                     </a>
                                 {% endif %}
                                 {% if project.gallery_images %}
-                                    <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#galleryModal-{{ project.id }}">
+                                    <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#galleryModal-{{ project.id }}" aria-label="Ver galeria do projeto {{ project.title }}">
                                         <i class="bi bi-images"></i> Ver Galeria
                                     </button>
                                 {% endif %}

@@ -2,6 +2,7 @@
 
 from flask import Flask
 from datetime import datetime
+from .config import config_by_name
 
 # Função utilitária para formatar data no Jinja2
 def format_datetime(value, fmt='%Y-%m-%d %H:%M'):
@@ -11,11 +12,15 @@ def format_datetime(value, fmt='%Y-%m-%d %H:%M'):
         return value # Retorna o valor original se não for datetime
     return value.strftime(fmt)
 
-def create_app(config_class_object):
+def create_app(config_name):
     app = Flask(__name__, instance_relative_config=True)
-    # Passar o objeto da classe de configuração diretamente
-    app.config.from_object(config_class_object) 
-    app.config.from_pyfile('config.py', silent=True) # Para carregar de instance/config.py
+    
+    # Carrega a configuração do objeto
+    config_obj = config_by_name.get(config_name)
+    app.config.from_object(config_obj)
+
+    # Armazena o nome do ambiente para uso posterior, por exemplo, nos templates
+    app.config['FLASK_CONFIG'] = config_name
 
     # Registrar filtros Jinja2 customizados
     app.jinja_env.filters['datetimeformat'] = format_datetime

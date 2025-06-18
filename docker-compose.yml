@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: myportfolio_web
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    environment:
+      - FLASK_ENV=development
+      - FLASK_CONFIG=development
+      # Para desenvolvimento, o Flask reloader cuidará das mudanças.
+      # Para produção, você removeria os volumes e mudaria o env para production. 

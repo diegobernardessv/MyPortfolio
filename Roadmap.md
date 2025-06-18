@@ -19,7 +19,7 @@ Desenvolver um portfólio pessoal interativo e moderno, para apresentação de p
     *   [X] Criação de Blueprints básicos (ex: `main` para rotas do portfólio).
     *   [X] Inclusão do Bootstrap 5 e um arquivo CSS customizado (`static/css/style.css`).
     *   [X] Criação do `requirements.txt` (Flask, etc.).
-    *   [ ] Configuração do `Dockerfile` e `docker-compose.yml` (recomendado para consistência).
+    *   [X] Configuração do `Dockerfile` e `docker-compose.yml` (recomendado para consistência).
 2.  **Criação e Refinamento do `Roadmap.md` (este documento).**
     *   [X] Versão inicial criada.
     *   [X] Revisar e detalhar com base no feedback do usuário.
@@ -75,13 +75,13 @@ Desenvolver um portfólio pessoal interativo e moderno, para apresentação de p
     *   [X] Definir paletas de cores para ambos os temas.
     *   [X] Salvar a preferência do usuário (localStorage).
 3.  **Otimizações:**
-    *   [ ] Otimização de imagens.
-    *   [ ] Minificação de CSS/JS para produção.
-    *   [ ] Revisão de performance.
+    *   [X] Otimização de imagens.
+    *   [X] Minificação de CSS/JS para produção.
+    *   [X] Revisão de performance.
 4.  **Acessibilidade (WCAG):**
-    *   [ ] Revisar o site para garantir boas práticas de acessibilidade (contraste, navegação por teclado, ARIA labels onde necessário).
+    *   [X] Revisar o site para garantir boas práticas de acessibilidade (contraste, navegação por teclado, ARIA labels onde necessário).
 5.  **SEO Básico:**
-    *   [ ] Meta tags (título, descrição, keywords) para cada página/seção principal.
+    *   [X] Meta tags (título, descrição, keywords) para cada página/seção principal.
     *   [X] `robots.txt` e `sitemap.xml` (pode ser gerado dinamicamente ou estático).
 6.  **"Download CV":**
     *   [X] Adicionar botão e funcionalidade para download do CV (arquivo PDF na pasta `static`).

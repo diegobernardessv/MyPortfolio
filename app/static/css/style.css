@@ -10,6 +10,14 @@
     --theme-link-hover: #2ABFFF; /* Um tom mais claro de azul para hover */
 }
 
+html {
+    scroll-padding-top: 70px; /* Offset para a navbar fixa. Ajuste se a altura da navbar mudar. */
+}
+
+main {
+    padding-bottom: 5rem; /* Adiciona um respiro no final do conteúdo principal */
+}
+
 /* Estilos globais podem vir aqui */
 body {
     font-family: 'Poppins', sans-serif;
@@ -140,8 +148,7 @@ footer .bi {
 }
 
 #about .img-fluid {
-    border: 5px solid whitesmoke; /* Borda com cor de destaque */
-    /* A borda de 5px pode ser um pouco grossa em telas menores */
+    border: 3px solid whitesmoke; /* Borda com cor de destaque */
 }
 
 #about h3 { /* "Olá! Eu sou Diego Bernardes Silva." */
@@ -175,6 +182,12 @@ footer .bi {
 
 #about .row.mt-5 p.text-muted { /* Texto abaixo dos títulos dos destaques */
     font-size: 0.85rem;
+}
+
+.presentation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 /* Media queries para #about */
@@ -239,8 +252,8 @@ footer .bi {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     background-color: var(--theme-surface-dark);
     border: 1px solid var(--theme-border-dark);
-    border-radius: 0.5rem; /* Arredondamento sutil para os cards de habilidade */
-    padding: 1rem; /* Adicionar um pouco de padding interno ao card */
+    border-radius: 1rem; /* Arredondamento sutil para os cards de habilidade */
+    padding: 0.5rem;
 }
 
 #skills .card:hover {
@@ -250,7 +263,7 @@ footer .bi {
 
 #skills .card .card-title {
     color: var(--theme-primary-accent);
-    font-size: 1.2rem; /* Tamanho base */
+    font-size: 1.15rem; /* Reduzido de 1.2rem */
     margin-bottom: 0.75rem; /* Espaço abaixo do título */
 }
 
@@ -262,7 +275,7 @@ footer .bi {
 
 #skills .card i.bi { /* Ícones grandes no topo do card */
     color: var(--theme-primary-accent);
-    font-size: 2.5rem !important; /* Reduzir um pouco o fs-1 do Bootstrap */
+    font-size: 2.25rem !important; /* Reduzido de 2.5rem */
 }
 
 /* Media Queries para #skills */
